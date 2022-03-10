@@ -16,4 +16,4 @@ func SetDBConnection(dbOpts *pg.Options){
 	}
 }
 
-func GetDBConnetion() *pg.DB { return db }
+func GetDBConnection() *pg.DB { return db }

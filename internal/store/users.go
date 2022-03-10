@@ -1,6 +1,7 @@
 package store
 
 import "errors"
+// import "time"
 
 type User struct {
 	Username string `binding:"required,min=5,max=30"`
@@ -26,6 +27,3 @@ func Authenticate(username, password string) (*User, error) {
 	}
 	return user, nil
 }
-
-
-var Users []*User
