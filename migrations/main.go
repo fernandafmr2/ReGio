@@ -7,6 +7,7 @@ import (
  
   "ReGio/internal/database"
   "ReGio/internal/store"
+  "ReGio/internal/conf"
  
   "github.com/go-pg/migrations/v8"
 )
@@ -27,7 +28,7 @@ func main() {
   flag.Usage = usage
   flag.Parse()
  
-  store.SetDBConnection(database.NewDBOptions())
+  store.SetDBConnection(database.NewDBOptions(conf.NewConfig()))
   db := store.GetDBConnection()
  
   oldVersion, newVersion, err := migrations.Run(db, flag.Args()...)
